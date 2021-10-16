@@ -9,8 +9,9 @@
     <style>
         label, input {
             display: inline-block;
-            width: 100px;
+            width: 80px;
             text-align: right;
+            
             
         }
     </style>
@@ -19,12 +20,12 @@
 </head>
 <body>
     
-<label for="weight">몸무게</label>
-<input type="number" id="weight">kg
+<label for="weight">밑변</label>
+<input type="number" id="weight">cm
 <br/>
-<label for="height"> 키 </label>
+<label for="height"> 높이 </label>
 <input type ="number" id="height"  min="1" max="300">cm
-<input id="result" type="button" value="BMI계산하기" onClick="BMI()">
+<input id="result" type="button" value="삼각형넓이" onClick="BMI()">
 
 <script>
  
@@ -33,11 +34,11 @@
         let w = document.querySelector('#weight').value;
             w = Number(w);
         let h = document.querySelector('#height').value;
-            h = Number(h)/100;  // 미터단위로 변환 
+            h = Number(h);  // 미터단위로 변환 
         
-        let bmi = w/(h*h);
+        let bmi = (w*h)/2;
         
-        alert("당신의 체질량지수:"+ String(bmi));
+        alert("삼각형의 넓이:"+ String(bmi));
 
     }
 
